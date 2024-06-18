@@ -65,3 +65,5 @@ end
 
 
 gem "foreman", "~> 0.88.1"
+
+gem "devise", "~> 4.9"
