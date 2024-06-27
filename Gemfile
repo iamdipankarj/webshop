@@ -67,3 +67,5 @@ end
 gem "foreman", "~> 0.88.1"
 
 gem "devise", "~> 4.9"
+
+gem "lucide-rails", "~> 0.4.0"

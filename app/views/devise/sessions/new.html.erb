@@ -1,49 +1,29 @@
-<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-    <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
-    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
-  </div>
+<div class="flex flex-col items-center justify-center w-full">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {
+    :class => "w-full mb-6 space-y-3"
+  }) do |f| %>
 
-  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {
-      :class => "space-y-6"
-    }) do |f| %>
-      <div>
-        <%= f.label :email, class: "block text-sm font-medium leading-6 text-gray-900" %>
-        <div class="mt-2">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
-        </div>
-      </div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email address", class: "text-input" %>
 
-      <div>
-        <div class="flex items-center justify-between">
-          <%= f.label :password, class: "block text-sm font-medium leading-6 text-gray-900" %>
-          <div class="text-sm">
-            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
-          </div>
-        </div>
-        <div class="mt-2">
-          <%= f.password_field :password, autocomplete: "current-password", class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
-        </div>
-      </div>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "text-input" %>
 
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end %>
-
-      <div>
-        <%= f.submit "Log in", class: "flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+    <% if devise_mapping.rememberable? %>
+      <div class="flex items-center !my-4">
+        <%= f.check_box :remember_me, class: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
+        <%= f.label :remember_me, class: "ms-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
       </div>
     <% end %>
 
-    <p class="mt-10 text-center text-sm text-gray-500">
-      Not a member?
-      <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Start a 14 day free trial</a>
-    </p>
-    <%= render "devise/shared/links" %>
-  </div>
-</div>
+    <%= f.submit "Login", class: "ring-offset-background focus-visible:ring-ring flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-black/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" %>
+  <% end %>
 
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to "Forgot your password?", new_password_path(resource_name), class: "inline-flex cursor-pointer items-center relative text-gray-10 dark:text-gray-dark-10 p-[1px] transition hover:text-gray-11 dark:hover:text-gray-dark-11 font-light whitespace-nowrap focus:outline-none focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-5 dark:focus-visible:ring-primary-dark-5 text-xs [&_svg]:w-3 [&_svg]:h-3 w-auto justify-center gap-1.5 underline" %>
+  <% end %>
+
+  <div class="flex w-full flex-col gap-2 md:flex-row mt-6">
+    <button class="flex items-center justify-center rounded-lg w-full h-11 px-4 gap-2 shadow-100 transition whitespace-nowrap bg-gray-1 dark:bg-gray-dark-1 text-gray-12 dark:text-gray-dark-12 border border-gray-5 dark:border-gray-dark-5 hover:bg-gray-2 dark:hover:bg-gray-dark-2 cursor-pointer hover:border-gray-8 dark:hover:border-gray-dark-8 focus:shadow-focus-100 focus:shadow-gray-5 dark:focus:shadow-gray-dark-5 text-sm"><%= render_icon 'google', classes: 'h-4 w-4' %> Google </button>
+    <button class="flex items-center justify-center rounded-lg w-full h-11 px-4 gap-2 shadow-100 transition whitespace-nowrap bg-gray-1 dark:bg-gray-dark-1 text-gray-12 dark:text-gray-dark-12 border border-gray-5 dark:border-gray-dark-5 hover:bg-gray-2 dark:hover:bg-gray-dark-2 cursor-pointer hover:border-gray-8 dark:hover:border-gray-dark-8 focus:shadow-focus-100 focus:shadow-gray-5 dark:focus:shadow-gray-dark-5 text-sm"><%= render_icon 'github', classes: 'h-4 w-4' %>Github </button>
+  </div>
+
+</div>

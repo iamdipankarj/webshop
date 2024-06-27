@@ -1,0 +1,25 @@
+<div class="flex flex-col items-center gap-1">
+  <div class="flex flex-col items-center gap-4">
+    <% if controller_name == 'passwords' && action_name == 'new' %>
+      <div class="mb-0 p-0 text-center">
+        <%= lucide_icon('framer', 'width' => '32', 'height' => 32) %>
+      </div>
+      <p class="antialiased text-3xl text-gray-12 dark:text-gray-dark-12 font-bold">Reset Password</p>
+    <% elsif controller_name == 'registrations' && action_name == 'new' %>
+      <div class="mb-0 p-0 text-center">
+        <%= lucide_icon('framer', 'width' => '32', 'height' => 32) %>
+      </div>
+      <p class="antialiased text-3xl text-gray-12 dark:text-gray-dark-12 font-bold">Register</p>
+    <% else %>
+      <div class="mb-0 p-0 text-center">
+        <%= lucide_icon('framer', 'width' => '32', 'height' => 32) %>
+      </div>
+      <p class="antialiased text-3xl text-gray-12 dark:text-gray-dark-12 font-bold">Log into Super</p>
+    <% end %>
+  </div>
+  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    <span class="antialiased text-sm text-center text-gray-9 dark:text-gray-dark-9">Don't have an account?
+        <%= link_to "Sign up", new_registration_path(resource_name), class: "inline-flex cursor-pointer items-center relative text-gray-10 dark:text-gray-dark-10 whitespace-nowrap focus:outline-none focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-5 dark:focus-visible:ring-primary-dark-5 text-sm font-semibold w-auto justify-center gap-1.5 underline" %>
+    </span>
+  <% end %>
+</div>
