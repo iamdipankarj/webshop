@@ -7,4 +7,6 @@ class HelpController < ApplicationController
   def tos; end
 
   def refund; end
+
+  def changelog; end
 end

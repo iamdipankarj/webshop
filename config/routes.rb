@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # Components
+  get 'components', to: 'components#index'
+
   # Documentation
   get 'documentation', to: 'help#index'
 
@@ -7,6 +10,8 @@ Rails.application.routes.draw do
   get 'tos', to: 'help#tos'
 
   get 'refund-policy', to: 'help#refund'
+
+  get 'changelog', to: 'help#changelog'
 
   # User Authentication
   devise_for :users, :path => '', :path_names => {
