@@ -9,3 +9,7 @@
 .auth-submit {
   @apply flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-black/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
 }
+
+.turbo-progress-bar {
+  @apply h-1 bg-slate-900;
+}
