@@ -75,3 +75,5 @@ gem "omniauth-google-oauth2", "~> 1.1"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 
 gem 'dotenv', groups: [:development, :test]
+
+gem "omniauth-github", "~> 2.0"
