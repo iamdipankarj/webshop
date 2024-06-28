@@ -3,4 +3,8 @@ module ApplicationHelper
     classes ||= ""
     render "icons/#{icon}", classes: classes
   end
+
+  def is_documentation_path
+    controller_name == 'help' && action_name == 'index'
+  end
 end

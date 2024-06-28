@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   # Documentation
   get 'documentation', to: 'help#index'
 
+  get 'privacy-policy', to: 'help#privacy'
+
+  get 'tos', to: 'help#tos'
+
+  get 'refund-policy', to: 'help#refund'
+
   # User Authentication
   devise_for :users, :path => '', :path_names => {
     :sign_in => "login",

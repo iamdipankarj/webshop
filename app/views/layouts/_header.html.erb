@@ -21,7 +21,7 @@
         <div class="hidden lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center lg:gap-4">
           <a href="/pricing" class="inline-flex items-center rounded-lg border border-transparent px-2 py-1 text-base transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-300 font-medium text-gray-700">Pricing</a>
           <a href="/showcase" class="inline-flex items-center rounded-lg border border-transparent px-2 py-1 text-base transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-300 font-medium text-gray-700">Components</a>
-          <%= link_to 'Documentation', documentation_path, class: class_names("inline-flex items-center rounded-lg border border-transparent px-2 py-1 text-base transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-300 font-medium text-gray-700") %>
+          <%= link_to 'Documentation', documentation_path, class: class_names("inline-flex items-center rounded-lg border border-transparent px-2 py-1 text-base transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-300 font-medium text-gray-700", "bg-gray-100 text-gray-900": is_documentation_path) %>
           <a href="https://feather.so/changelog" class="inline-flex items-center rounded-lg border border-transparent px-2 py-1 text-base transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-300 font-medium text-gray-700">Changelog</a>
         </div>
         <div class="relative z-10 flex items-center gap-x-3">

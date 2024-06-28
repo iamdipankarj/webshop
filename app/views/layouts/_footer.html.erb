@@ -214,9 +214,11 @@
       <%= Time.now.year %> Super Labs Inc. All rights reserved.
     </p>
     <div class="flex items-center justify-center space-x-4 text-sm/6 font-semibold text-slate-900 md:justify-end">
-      <a href="/privacy-policy">Privacy policy</a>
+      <%= link_to 'Refund Policy', refund_policy_path %>
       <div class="h-4 w-px bg-slate-200"></div>
-      <a href="/changelog">Changelog</a>
+      <%= link_to 'Privacy Policy', privacy_policy_path %>
+      <div class="h-4 w-px bg-slate-200"></div>
+      <%= link_to 'Terms of Service', tos_path %>
     </div>
   </div>
 </footer>
