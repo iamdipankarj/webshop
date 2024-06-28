@@ -69,3 +69,9 @@ gem "foreman", "~> 0.88.1"
 gem "devise", "~> 4.9"
 
 gem "lucide-rails", "~> 0.4.0"
+
+gem "omniauth-google-oauth2", "~> 1.1"
+
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+
+gem 'dotenv', groups: [:development, :test]

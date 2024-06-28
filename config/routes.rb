@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     :sign_in => "login",
     :sign_out => "logout",
     :sign_up => "register"
+  }, controllers: {
+    :omniauth_callbacks => "users/omniauth_callbacks"
   }
 
   root 'main#home'
