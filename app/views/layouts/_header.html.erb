@@ -27,7 +27,22 @@
         <div class="relative z-10 flex items-center gap-x-3">
           <div class="hidden sm:block">
             <% if user_signed_in? %>
-              <%= button_to "Log Out (#{@email.truncate(10)})", destroy_user_session_path, method: :delete, class: "inline-flex h-10 items-center justify-center rounded-xl border border-gray-300 px-4 py-2 text-base font-semibold text-gray-900 transition-all duration-200 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"  %>
+              <div data-controller="dropdown" class="relative">
+                <button class="inline-flex h-10 items-center justify-center rounded-xl border border-gray-300 px-4 py-2 text-base font-semibold text-gray-900 transition-all duration-200 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2" type="button" data-action="dropdown#toggle click@window->dropdown#hide">Profile</button>
+                <div
+                  data-dropdown-target="menu"
+                  class="hidden transition transform origin-top-right absolute right-0 z-10 mt-2 w-56 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  data-transition-enter-from="opacity-0 scale-95"
+                  data-transition-enter-to="opacity-100 scale-100"
+                  data-transition-leave-from="opacity-100 scale-100"
+                  data-transition-leave-to="opacity-0 scale-95"
+                >
+                  <%= link_to "Settings", settings_path, class: "block px-4 py-2 text-md hover:bg-primary-900/5", :data => {
+                    :action => "dropdown#toggle"
+                  } %>
+                  <%= button_to "Log Out (#{@email.truncate(15)})", destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-md hover:bg-primary-900/5 w-full text-left" %>
+                </div>
+              </div>
             <% else %>
               <%= link_to 'Login', new_user_session_path, class: 'inline-flex h-10 items-center justify-center rounded-xl border border-gray-300 px-4 py-2 text-base font-semibold text-gray-900 transition-all duration-200 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2' %>
             <% end %>
