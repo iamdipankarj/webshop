@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # Components
   get 'components', to: 'components#index'
 
+  get 'components/buttons', to: 'components#buttons'
+
   # Documentation
   get 'documentation', to: 'help#index'
 
