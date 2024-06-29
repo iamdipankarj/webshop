@@ -27,7 +27,7 @@
         <div class="relative z-10 flex items-center gap-x-3">
           <div class="hidden sm:block">
             <% if user_signed_in? %>
-              <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "inline-flex h-10 items-center justify-center rounded-xl border border-gray-300 px-4 py-2 text-base font-semibold text-gray-900 transition-all duration-200 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"  %>
+              <%= button_to "Log Out (#{@email.truncate(10)})", destroy_user_session_path, method: :delete, class: "inline-flex h-10 items-center justify-center rounded-xl border border-gray-300 px-4 py-2 text-base font-semibold text-gray-900 transition-all duration-200 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"  %>
             <% else %>
               <%= link_to 'Login', new_user_session_path, class: 'inline-flex h-10 items-center justify-center rounded-xl border border-gray-300 px-4 py-2 text-base font-semibold text-gray-900 transition-all duration-200 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2' %>
             <% end %>
