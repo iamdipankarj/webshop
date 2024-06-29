@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'changelog', to: 'help#changelog'
 
+  get 'settings', to: 'users#settings'
+
   # User Authentication
   devise_for :users, :path => '', :path_names => {
     :sign_in => "login",
